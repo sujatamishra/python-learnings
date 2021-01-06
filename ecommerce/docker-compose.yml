@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7.31
+    ports:
+      - '3306:3306'
+    restart: always
+    environment:
+      #- MYSQL_HOST=172.19.0.3
+      #- MYSQL_PORT=3306 
+      - MYSQL_ROOT_PASSWORD=Root@123
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=Root@123
+      - MYSQL_DATABASE=ecommDB
+   
+    
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    command: python3 manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    
+
+
+
+    

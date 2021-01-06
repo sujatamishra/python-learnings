@@ -5,4 +5,4 @@ django-filter==2.4.0
 mysqlclient==2.0.2
 Pillow==8.0.1
 
-flake8>=3.6.0,<3.7.1
+flake8>=3.6.0,<3.7.0
